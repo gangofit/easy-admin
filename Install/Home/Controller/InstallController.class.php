@@ -46,7 +46,7 @@ class InstallController extends CommonController {
             return $this->ajaxReturn(false);
         }
 
-        $conn = new \mysqli($_POST['db']['host'], $_POST['db']['username'], $_POST['db']['password'], 'test', $_POST['db']['port']);
+        $conn = new \mysqli($_POST['db']['host'], $_POST['db']['username'], $_POST['db']['password'], $dbConfig['dbname'], $_POST['db']['port']);
 
         if (!$conn) {
             $this->ajaxReturn(false);
